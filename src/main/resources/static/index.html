@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="basic.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <title>NFY: News For You</title>
+</head>
+<body>
+<div class="wrap">
+    <div class="jumbotron jumbotron-fluid">
+        <!--        title-->
+        <div class="container">
+            <h1 class="display-4">NEWS</h1>
+            <p class="lead">Read news only you want</p>
+            <hr class="my-4">
+        </div>
+
+        <div class="nav">
+            <div class="nav-news active">
+                뉴스보기
+            </div>
+            <div class="nav-keyword">
+                키워드보기
+            </div>
+        </div>
+
+        <!--     키워드 보기 area-->
+        <div class="keyword-area">
+            <!--    키워드 입력 area-->
+            <div class="input-group mb-3" style="padding:30px">
+                <input type="text" class="form-control" placeholder="키워드를 입력해주세요"
+                       aria-label="Recipient's username" aria-describedby="basic-addon2" id="keyword">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="writePost()">키워드 등록</button>
+                </div>
+            </div>
+            <!--        <div class="area-write">-->
+            <!--            <textarea class="field" placeholder="키워드를 입력해주세요" name="keyword" id="keyword" cols="30"-->
+            <!--                  rows="10"></textarea>-->
+            <!--&lt;!&ndash;            <button class="btn btn-danger" onclick="writePost()">작성하기</button>&ndash;&gt;-->
+            <!--            <img src="images/send.png" alt="" onclick="writePost()">-->
+            <!--        </div>-->
+
+
+        </div>
+
+    </div>
+
+    <!--     뉴스 모아보기 area-->
+    <div class="news-area">
+        <div class="card mb-3" id="news-cards">
+            <div class="card-body">
+                <h5 class="card-title">title</h5>
+                <p class="card-text">desc</p>
+                <p class="card-text"><small class="text-muted">date</small></p>
+            </div>
+        </div>
+    </div>
+
+    <!--    키워드 카드 박스-->
+    <div class="keyword-area">
+        <div id="cards-box" class="area-read">
+            <div class="card">
+                <div class="card-body">
+                    <p class="date">${modifiedAt}</p>
+                    <div class="keyword">
+                        <div id="${id}-keyword" class="text">
+                            ${keyword}
+                        </div>
+                        <div id="${id}-editarea" class="edit">
+                            <textarea id="${id}-textarea" class="text-edit"></textarea>
+                        </div>
+                    </div>
+
+                    <img id="${id}-edit" class="icon-start-edit" src="images/edit.png" alt="" onclick="editPost('${id}')">
+                    <img id="${id}-delete" class="icon-delete" src="images/delete.png" alt="" onclick="deleteOne('${id}')">
+                    <img id="${id}-submit" class="icon-end-edit" src="images/done.png" alt="" onclick="submitEdit('${id}')">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
