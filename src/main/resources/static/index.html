@@ -14,18 +14,20 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
 
-    <title>NFY: News For You</title>
+    <title>CNN: Custom News Network</title>
 </head>
 <body>
 <div class="wrap">
     <div class="jumbotron jumbotron-fluid">
         <!--        title-->
         <div class="container">
-            <h1 class="display-4">NEWS</h1>
-            <p class="lead">Read news only you want</p>
+            <h1 class="display-4">CNN</h1>
+            <p class="lead">Custom News Network</p>
+            <p>우리는 매일 수많은 뉴스를 접하고 있습니다. 그런데 수많은 뉴스 중에 자신이 원하는 뉴스는 얼마나 될까요? 키워드를 등록하여 원하는 뉴스를 받아보세요.</p>
             <hr class="my-4">
         </div>
 
+        <!--        tab-->
         <div class="nav">
             <div class="nav-news active">
                 뉴스보기
@@ -45,52 +47,22 @@
                     <button class="btn btn-outline-secondary" type="button" onclick="writePost()">키워드 등록</button>
                 </div>
             </div>
-            <!--        <div class="area-write">-->
-            <!--            <textarea class="field" placeholder="키워드를 입력해주세요" name="keyword" id="keyword" cols="30"-->
-            <!--                  rows="10"></textarea>-->
-            <!--&lt;!&ndash;            <button class="btn btn-danger" onclick="writePost()">작성하기</button>&ndash;&gt;-->
-            <!--            <img src="images/send.png" alt="" onclick="writePost()">-->
-            <!--        </div>-->
-
-
         </div>
-
     </div>
 
     <!--     뉴스 모아보기 area-->
     <div class="news-area">
         <div class="card mb-3" id="news-cards">
-            <div class="card-body">
-                <h5 class="card-title">title</h5>
-                <p class="card-text">desc</p>
-                <p class="card-text"><small class="text-muted">date</small></p>
-            </div>
+
         </div>
     </div>
 
     <!--    키워드 카드 박스-->
     <div class="keyword-area">
         <div id="cards-box" class="area-read">
-            <div class="card">
-                <div class="card-body">
-                    <p class="date">${modifiedAt}</p>
-                    <div class="keyword">
-                        <div id="${id}-keyword" class="text">
-                            ${keyword}
-                        </div>
-                        <div id="${id}-editarea" class="edit">
-                            <textarea id="${id}-textarea" class="text-edit"></textarea>
-                        </div>
-                    </div>
 
-                    <img id="${id}-edit" class="icon-start-edit" src="images/edit.png" alt="" onclick="editPost('${id}')">
-                    <img id="${id}-delete" class="icon-delete" src="images/delete.png" alt="" onclick="deleteOne('${id}')">
-                    <img id="${id}-submit" class="icon-end-edit" src="images/done.png" alt="" onclick="submitEdit('${id}')">
-                </div>
-            </div>
         </div>
     </div>
-
 
 </div>
 </body>
